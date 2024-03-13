@@ -44,7 +44,17 @@
         >
               </div>
 
+         <!-- confirm password  -->
+         <div class="form-group">
+            <label for = "password2">Confirm Password </label>
+            <input type="password" id="password2" placeholder="confirm password" name="password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
+              </div>
+              <button type = "submit">Register</button>
+
         </form>
+        <div class="message-container">
+        <h3 id="message">dont hesitate</h3>
+        </div>
     </div>
 
     <script src="form.js"></script>

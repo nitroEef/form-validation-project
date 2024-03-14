@@ -23,15 +23,15 @@ const validateForm = () => {
 
   if (password1EL.value === password2EL.value) {
     passwordMatch = true;
-    password1EL.style.borderColor = "green";
-    password2EL.style.borderColor = "green";
+    password1EL.style.borderColor = "green !important";
+    password2EL.style.borderColor = "green !important";
   } else {
     passwordMatch = false;
     message.textContent = "Make sure password match.";
     message.style.color = "red";
     messageContainer.style.borderColor = "red";
-    password1EL.style.borderColor = "red";
-    password2EL.style.borderColor = "red";
+    password1EL.style.borderColor = "red !important";
+    password2EL.style.borderColor = "red !important";
     return
   }
 
@@ -46,6 +46,17 @@ const validateForm = () => {
   }
 };
 
+const storeFormData = () => {
+   const user = {
+    name:form.name.value,
+    phone:form.phone.value,
+    email:form.email.value,
+    website:form.website.value,
+    password:form.password.value
+   }
+console.log(user)
+}
+
 const processFormData = (e) => {
     e.preventDefault();
     console.log(e);
@@ -53,6 +64,10 @@ const processFormData = (e) => {
     validateForm();
 
     // submit data if valid
+    if(isValid & passwordMatch){
+        storeFormData()
+        form.reset() //for everything to disappear after reg
+    }
     
 };
 

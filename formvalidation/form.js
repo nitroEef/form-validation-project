@@ -19,7 +19,7 @@ const validateForm = () => {
     return;
   }
 
-  // check to see if password match
+  // check to see if password match..
 
   if (password1EL.value === password2EL.value) {
     passwordMatch = true;
